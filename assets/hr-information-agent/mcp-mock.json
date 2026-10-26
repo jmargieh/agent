@@ -1,0 +1,383 @@
+{
+  "servers": {
+    "sap-sf-employee-central-ec": {
+      "mcp_server_name": "sap-sf-employee-central-ec-mcp-server",
+      "description": "SAP SuccessFactors Employee Central global assignment and employment information (read-only)",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Retrieve OData metadata document for schema discovery",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"edmx:Edmx": {"Version": "1.0", "edmx:DataServices": {}}}
+        },
+        "batch_for_sfodata": {
+          "description": "Execute batch OData requests",
+          "input_schema": {"type": "object", "properties": {"requests": {"type": "array"}}, "required": []},
+          "mock_response": {"responses": []}
+        },
+        "list_perglobalinfousa_for_sfodata": {
+          "description": "List global personal information (USA) for employees",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string", "description": "Maximum number of records"},
+              "$filter": {"type": "string", "description": "OData filter expression"},
+              "$select": {"type": "string", "description": "Fields to return"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "EMP001",
+                "country": "USA",
+                "nationality": "US",
+                "dateOfBirth": "/Date(315532800000)/",
+                "gender": "M",
+                "createdOn": "/Date(1609459200000)/",
+                "lastModifiedOn": "/Date(1704067200000)/"
+              }
+            ]
+          }
+        },
+        "get_perglobalinfousa_for_sfodata": {
+          "description": "Get global personal information (USA) for a specific employee",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "userId": {"type": "string", "description": "Employee user ID"},
+              "startDate": {"type": "string", "description": "Record start date"}
+            },
+            "required": ["userId"]
+          },
+          "mock_response": {
+            "userId": "EMP001",
+            "country": "USA",
+            "nationality": "US",
+            "dateOfBirth": "/Date(315532800000)/",
+            "gender": "M",
+            "createdOn": "/Date(1609459200000)/",
+            "lastModifiedOn": "/Date(1704067200000)/"
+          }
+        },
+        "list_perglobalinfogbr_for_sfodata": {
+          "description": "List global personal information (UK) for employees",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string"},
+              "$filter": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "EMP001",
+                "country": "GBR",
+                "nationality": "GB",
+                "dateOfBirth": "/Date(315532800000)/",
+                "gender": "M"
+              }
+            ]
+          }
+        },
+        "get_perglobalinfogbr_for_sfodata": {
+          "description": "Get global personal information (UK) for a specific employee",
+          "input_schema": {
+            "type": "object",
+            "properties": {"userId": {"type": "string"}},
+            "required": ["userId"]
+          },
+          "mock_response": {"userId": "EMP001", "country": "GBR", "nationality": "GB", "dateOfBirth": "/Date(315532800000)/"}
+        }
+      }
+    },
+    "sap-sf-employee-profile": {
+      "mcp_server_name": "sap-sf-employee-profile-mcp-server",
+      "description": "SAP SuccessFactors Employee Profile (public profile, education, languages) — read-only",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Retrieve OData metadata document for schema discovery",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"edmx:Edmx": {"Version": "1.0"}}
+        },
+        "batch_for_sfodata": {
+          "description": "Execute batch OData requests",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"responses": []}
+        },
+        "list_eppublicprofile_for_sfodata": {
+          "description": "List public employee profiles",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string"},
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "EMP001",
+                "firstName": "Alex",
+                "lastName": "Johnson",
+                "jobTitle": "Project Manager",
+                "department": "Engineering",
+                "email": "alex.johnson@company.com",
+                "manager": "Maria Smith",
+                "location": "London, UK",
+                "startDate": "/Date(1609459200000)/"
+              }
+            ]
+          }
+        },
+        "get_eppublicprofile_for_sfodata": {
+          "description": "Get public profile for a specific employee",
+          "input_schema": {
+            "type": "object",
+            "properties": {"userId": {"type": "string", "description": "Employee user ID"}},
+            "required": ["userId"]
+          },
+          "mock_response": {
+            "userId": "EMP001",
+            "firstName": "Alex",
+            "lastName": "Johnson",
+            "jobTitle": "Project Manager",
+            "department": "Engineering",
+            "email": "alex.johnson@company.com",
+            "manager": "Maria Smith",
+            "location": "London, UK",
+            "startDate": "/Date(1609459200000)/"
+          }
+        },
+        "list_background_education_for_sfodata": {
+          "description": "List education history for employees",
+          "input_schema": {
+            "type": "object",
+            "properties": {"$filter": {"type": "string"}, "$top": {"type": "string"}},
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "EMP001",
+                "school": "University of London",
+                "degree": "Bachelor of Science",
+                "major": "Computer Science",
+                "endDate": "/Date(1072915200000)/"
+              }
+            ]
+          }
+        },
+        "list_background_languages_for_sfodata": {
+          "description": "List language skills for employees",
+          "input_schema": {
+            "type": "object",
+            "properties": {"$filter": {"type": "string"}},
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {"userId": "EMP001", "language": "English", "readingLevel": "Expert", "writingLevel": "Expert"},
+              {"userId": "EMP001", "language": "French", "readingLevel": "Intermediate", "writingLevel": "Basic"}
+            ]
+          }
+        }
+      }
+    },
+    "sap-sf-time-off": {
+      "mcp_server_name": "sap-sf-time-off-mcp-server",
+      "description": "SAP SuccessFactors Time Off — leave balances, time accounts, and time types (read-only)",
+      "tools": {
+        "get_metadata_sfodata": {
+          "description": "Retrieve OData metadata document for schema discovery",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"edmx:Edmx": {"Version": "1.0"}}
+        },
+        "batch_for_sfodata": {
+          "description": "Execute batch OData requests",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": {"responses": []}
+        },
+        "list_timeaccount_for_sfodata": {
+          "description": "List time accounts (leave accounts) for the authenticated employee",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$top": {"type": "string"},
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "ANNUAL_2026",
+                "userId": "EMP001",
+                "timeAccountType": "ANNUAL_LEAVE",
+                "bookingEndDate": "/Date(1767225600000)/",
+                "bookingStartDate": "/Date(1735689600000)/",
+                "accountClosed": false
+              },
+              {
+                "externalCode": "SICK_2026",
+                "userId": "EMP001",
+                "timeAccountType": "SICK_LEAVE",
+                "bookingEndDate": "/Date(1767225600000)/",
+                "bookingStartDate": "/Date(1735689600000)/",
+                "accountClosed": false
+              }
+            ]
+          }
+        },
+        "get_timeaccount_for_sfodata": {
+          "description": "Get a specific time account by external code",
+          "input_schema": {
+            "type": "object",
+            "properties": {"externalCode": {"type": "string", "description": "Time account external code"}},
+            "required": ["externalCode"]
+          },
+          "mock_response": {
+            "externalCode": "ANNUAL_2026",
+            "userId": "EMP001",
+            "timeAccountType": "ANNUAL_LEAVE",
+            "bookingEndDate": "/Date(1767225600000)/",
+            "accountClosed": false
+          }
+        },
+        "list_timeaccountdetail_for_sfodata": {
+          "description": "List detailed time account transactions and balance changes",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string", "description": "OData filter (e.g. userId eq 'EMP001')"},
+              "$top": {"type": "string"},
+              "$select": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "ANNUAL_2026_001",
+                "userId": "EMP001",
+                "timeAccountType": "ANNUAL_LEAVE",
+                "bookingDate": "/Date(1735689600000)/",
+                "quantity": "25.00",
+                "bookingType": "ACCRUAL_POSTING",
+                "balance": "25.00"
+              },
+              {
+                "externalCode": "ANNUAL_2026_002",
+                "userId": "EMP001",
+                "timeAccountType": "ANNUAL_LEAVE",
+                "bookingDate": "/Date(1740960000000)/",
+                "quantity": "-5.00",
+                "bookingType": "ABSENCE_POSTING",
+                "balance": "20.00"
+              }
+            ]
+          }
+        },
+        "list_emptimeaccountbalance_for_sfodata": {
+          "description": "List employee time account balances (current leave balance snapshot)",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string", "description": "Filter by userId"},
+              "$top": {"type": "string"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "userId": "EMP001",
+                "timeAccountType": "ANNUAL_LEAVE",
+                "balance": "20.00",
+                "unit": "DAYS",
+                "snapshotDate": "/Date(1761350400000)/"
+              },
+              {
+                "userId": "EMP001",
+                "timeAccountType": "SICK_LEAVE",
+                "balance": "5.00",
+                "unit": "DAYS",
+                "snapshotDate": "/Date(1761350400000)/"
+              }
+            ]
+          }
+        },
+        "list_timetype_for_sfodata": {
+          "description": "List available time types (leave types) configured in the system",
+          "input_schema": {
+            "type": "object",
+            "properties": {"$filter": {"type": "string"}, "$top": {"type": "string"}},
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "ANNUAL_LEAVE",
+                "name": "Annual Leave",
+                "category": "ABSENCE",
+                "countingMethod": "CALENDAR_DAYS",
+                "isActiveInESS": true
+              },
+              {
+                "externalCode": "SICK_LEAVE",
+                "name": "Sick Leave",
+                "category": "ABSENCE",
+                "countingMethod": "CALENDAR_DAYS",
+                "isActiveInESS": true
+              },
+              {
+                "externalCode": "BEREAVEMENT_LEAVE",
+                "name": "Bereavement Leave",
+                "category": "ABSENCE",
+                "countingMethod": "CALENDAR_DAYS",
+                "isActiveInESS": true
+              }
+            ]
+          }
+        },
+        "list_timeaccountsnapshot_for_sfodata": {
+          "description": "List time account snapshots (historical balance records)",
+          "input_schema": {
+            "type": "object",
+            "properties": {"$filter": {"type": "string"}, "$top": {"type": "string"}},
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "externalCode": "SNAP_EMP001_ANNUAL_20261001",
+                "userId": "EMP001",
+                "timeAccountType": "ANNUAL_LEAVE",
+                "snapshotDate": "/Date(1759276800000)/",
+                "balance": "22.00"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "hr-information-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 3,
+    "total_tools": 17,
+    "generated_from": [
+      "assets/sap-sf-employee-central-ec-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-employee-profile-mcp-server/mcp-translation/translation.json",
+      "assets/sap-sf-time-off-mcp-server/mcp-translation/translation.json"
+    ],
+    "generation_date": "2026-10-22"
+  }
+}

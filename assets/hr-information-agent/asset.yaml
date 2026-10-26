@@ -1,0 +1,48 @@
+apiVersion: asset.sap/v1
+kind: Asset
+type: agent
+
+metadata:
+  name: hr-information-agent
+  description: AI-powered HR self-service assistant that answers employee questions about HR policies, leave rules, and benefits, and retrieves personal HR data from SAP SuccessFactors to reduce helpdesk tickets by 30%.
+  version: "1.0.0"
+
+provides:
+  apis:
+    - name: hr-information-agent
+      kind: a2a
+      ordId: customer.build:apiResource:hr-information-agent-10e0d.hr-information-agent:v1
+
+container:
+  buildPath: .
+  port: 5000
+
+requires:
+  - name: sap-sf-employee-central-ec-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:hr-information-agent-10e0d.sap-sf-employee-central-ec-mcp-server:v1
+  - name: sap-sf-employee-profile-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:hr-information-agent-10e0d.sap-sf-employee-profile-mcp-server:v1
+  - name: sap-sf-time-off-mcp-server
+    kind: mcp-server
+    ordId: customer.build:apiResource:hr-information-agent-10e0d.sap-sf-time-off-mcp-server:v1
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

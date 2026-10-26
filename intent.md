@@ -1,4 +1,4 @@
-# HR Information Agent
+# HR Information Agent1
 
 My Awesome Agent — AI-powered assistant for employee HR self-service
 
@@ -9,17 +9,21 @@ Employees struggle to find HR information on their own — covering company poli
 ## Business Goals & Success Criteria
 
 | Metric | Baseline | Target | Timeline | Process / Capability | Source |
-|--------|----------|--------|----------|----------------------|--------|
+| --- | --- | --- | --- | --- | --- |
 | Monthly HR helpdesk ticket volume | 20 tickets/month | 14 tickets/month (−30%) | 3 months post-launch | HR Employee Self-Service | user |
 | Employee self-service resolution rate | — | ≥30% of HR queries resolved without escalation | 3 months post-launch | HR Information Access | agent-derived |
 
 ## Key Milestones
 
-1. **Agent answers general policy questions** — agent correctly responds to questions about HR policies, leave rules, and benefits from ingested PDF/Word documents.
-2. **Agent retrieves personal HR data** — agent looks up the logged-in employee's leave balance and personal profile via SAP SuccessFactors APIs.
-3. **Agent embedded in SAP SuccessFactors** — agent is accessible from within the SuccessFactors UI without any additional login step.
-4. **Helpdesk ticket deflection tracked** — baseline ticket volume measured and first reduction reported at the 1-month mark post-launch.
-5. **30% ticket reduction confirmed** — target achieved and confirmed at the 3-month review.
+1.  **Agent answers general policy questions** — agent correctly responds to questions about HR policies, leave rules, and benefits from ingested PDF/Word documents.
+    
+2.  **Agent retrieves personal HR data** — agent looks up the logged-in employee's leave balance and personal profile via SAP SuccessFactors APIs.
+    
+3.  **Agent embedded in SAP SuccessFactors** — agent is accessible from within the SuccessFactors UI without any additional login step.
+    
+4.  **Helpdesk ticket deflection tracked** — baseline ticket volume measured and first reduction reported at the 1-month mark post-launch.
+    
+5.  **30% ticket reduction confirmed** — target achieved and confirmed at the 3-month review.
 
 ## Business Architecture (RBA)
 
@@ -45,7 +49,7 @@ The business challenge maps to the Recruit to Retire E2E, specifically the Manag
 ## Fit Gap Analysis
 
 | Requirement (business) | Standard asset(s) found | API ORD ID | MCP Server ORD ID | MCP Server Version | Webhook API ORD ID | Data Product ORD ID | Gap? | Notes / assumptions |
-|------------------------|-------------------------|------------|-------------------|--------------------|--------------------|---------------------|------|---------------------|
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Look up personal HR data (leave balance, profile, benefits) | SAP SuccessFactors Employee Central | `sap.sf:apiResource:EmployeeCentralEC:v1` | — | — | — | — | No | Available API; no MCP server found — custom integration required |
 | Retrieve employee profile information | SAP SuccessFactors Employee Profile | `sap.sf:apiResource:ECEmployeeProfile:v1` | — | — | — | — | No | Available API; no MCP server found — custom integration required |
 | Answer general HR policy questions (policies, leave, benefits) | — | — | — | — | — | — | Yes | No standard SAP asset; requires document ingestion + RAG-based knowledge base |
@@ -53,12 +57,17 @@ The business challenge maps to the Recruit to Retire E2E, specifically the Manag
 
 ### Key findings
 
-- SAP SuccessFactors Employee Central is the authoritative system for personal HR data; APIs are available but require custom MCP-style integration.
-- No ready-made MCP servers were found for SuccessFactors APIs — the agent will call these APIs directly via authenticated HTTP.
-- HR policy documents (PDF/Word) are a key knowledge source with no structured system behind them; a retrieval-augmented generation (RAG) knowledge base must be built.
-- The knowledge base is the primary gap and the most impactful component for ticket deflection.
-- The agent will be embedded in SAP SuccessFactors, requiring an A2A-compatible deployment on SAP BTP.
-- Personal data access must be scoped to the authenticated employee only — no cross-employee data access.
+-   SAP SuccessFactors Employee Central is the authoritative system for personal HR data; APIs are available but require custom MCP-style integration.
+    
+-   No ready-made MCP servers were found for SuccessFactors APIs — the agent will call these APIs directly via authenticated HTTP.
+    
+-   HR policy documents (PDF/Word) are a key knowledge source with no structured system behind them; a retrieval-augmented generation (RAG) knowledge base must be built.
+    
+-   The knowledge base is the primary gap and the most impactful component for ticket deflection.
+    
+-   The agent will be embedded in SAP SuccessFactors, requiring an A2A-compatible deployment on SAP BTP.
+    
+-   Personal data access must be scoped to the authenticated employee only — no cross-employee data access.
 
 ## Recommendations
 
@@ -78,9 +87,12 @@ Employees cannot easily locate HR information independently, leading to repetiti
 
 #### Affected User Roles
 
-- All employees (primary users of the agent)
-- HR helpdesk team (beneficiaries of reduced ticket volume)
-- HR administrators (owners of policy documents)
+-   All employees (primary users of the agent)
+    
+-   HR helpdesk team (beneficiaries of reduced ticket volume)
+    
+-   HR administrators (owners of policy documents)
+    
 
 #### Important factors
 

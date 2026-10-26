@@ -1,0 +1,13 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: hr-information-agent-10e0d
+  version: "1.0.0"
+  description: AI-powered HR self-service agent for SAP SuccessFactors that reduces helpdesk tickets by 30% through policy Q&A and personal HR data retrieval.
+
+assets:
+  - ref: ./assets/hr-information-agent/asset.yaml
+  - ref: ./assets/sap-sf-employee-central-ec-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-employee-profile-mcp-server/asset.yaml
+  - ref: ./assets/sap-sf-time-off-mcp-server/asset.yaml

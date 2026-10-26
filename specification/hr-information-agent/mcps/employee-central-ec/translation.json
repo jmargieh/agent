@@ -1,0 +1,3929 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.sf:apiResource:EmployeeCentralEC:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/sfodata",
+    "title": "sfodata",
+    "version": "1.0.0",
+    "description": "MCP server for the sfodata service."
+  },
+  "tools": [
+    {
+      "name": "get_metadata_sfodata",
+      "title": "get_metadata_sfodata",
+      "description": "Get metadata of the OData service with optional filtering to reduce token consumption.\nReturns the metadata in XML format, which can be used to discover available entities and their properties.\nCall this endpoint every time before you call other tools to ensure understanding of the schema.\nBased on the metadata, you can dynamically create an OData request.\n\nUse filtering parameters to get specific metadata sections. Without parameters, this tool returns the complete XML metadata (which might be huge).\nOnly use the specified enum values for the filtering parameters.\n",
+      "odataType": {
+        "metadataRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "batch_for_sfodata",
+      "title": "batch_for_sfodata",
+      "description": "Execute multiple OData operations in a single batch request using the $batch endpoint. This allows you to combine multiple tool calls into one HTTP request, improving efficiency when performing multiple operations.",
+      "odataType": {
+        "batchRequest": {},
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfochn_for_sfodata",
+      "title": "list_PerGlobalInfoCHN_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoCHN collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHN",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfochn_for_sfodata",
+      "title": "get_PerGlobalInfoCHN_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoCHN collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHN",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfochn_for_sfodata",
+      "title": "count_PerGlobalInfoCHN_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoCHN collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHN",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfobra_for_sfodata",
+      "title": "list_PerGlobalInfoBRA_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoBRA collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoBRA",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfobra_for_sfodata",
+      "title": "get_PerGlobalInfoBRA_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoBRA collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoBRA",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfobra_for_sfodata",
+      "title": "count_PerGlobalInfoBRA_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoBRA collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoBRA",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfogbr_for_sfodata",
+      "title": "list_PerGlobalInfoGBR_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoGBR collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoGBR",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfogbr_for_sfodata",
+      "title": "get_PerGlobalInfoGBR_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoGBR collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoGBR",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfogbr_for_sfodata",
+      "title": "count_PerGlobalInfoGBR_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoGBR collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoGBR",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoaus_for_sfodata",
+      "title": "list_PerGlobalInfoAUS_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoAUS collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoAUS",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoaus_for_sfodata",
+      "title": "get_PerGlobalInfoAUS_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoAUS collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoAUS",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoaus_for_sfodata",
+      "title": "count_PerGlobalInfoAUS_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoAUS collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoAUS",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfocan_for_sfodata",
+      "title": "list_PerGlobalInfoCAN_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoCAN collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCAN",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfocan_for_sfodata",
+      "title": "get_PerGlobalInfoCAN_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoCAN collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCAN",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfocan_for_sfodata",
+      "title": "count_PerGlobalInfoCAN_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoCAN collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCAN",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfousa_for_sfodata",
+      "title": "list_PerGlobalInfoUSA_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoUSA collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoUSA",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfousa_for_sfodata",
+      "title": "get_PerGlobalInfoUSA_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoUSA collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoUSA",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfousa_for_sfodata",
+      "title": "count_PerGlobalInfoUSA_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoUSA collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoUSA",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfofra_for_sfodata",
+      "title": "list_PerGlobalInfoFRA_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoFRA collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFRA",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfofra_for_sfodata",
+      "title": "get_PerGlobalInfoFRA_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoFRA collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFRA",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfofra_for_sfodata",
+      "title": "count_PerGlobalInfoFRA_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoFRA collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFRA",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfodeu_for_sfodata",
+      "title": "list_PerGlobalInfoDEU_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoDEU collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDEU",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfodeu_for_sfodata",
+      "title": "get_PerGlobalInfoDEU_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoDEU collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDEU",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfodeu_for_sfodata",
+      "title": "count_PerGlobalInfoDEU_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoDEU collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDEU",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoesp_for_sfodata",
+      "title": "list_PerGlobalInfoESP_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoESP collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoESP",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoesp_for_sfodata",
+      "title": "get_PerGlobalInfoESP_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoESP collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoESP",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoesp_for_sfodata",
+      "title": "count_PerGlobalInfoESP_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoESP collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoESP",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfofin_for_sfodata",
+      "title": "list_PerGlobalInfoFIN_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoFIN collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFIN",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfofin_for_sfodata",
+      "title": "get_PerGlobalInfoFIN_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoFIN collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFIN",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfofin_for_sfodata",
+      "title": "count_PerGlobalInfoFIN_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoFIN collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoFIN",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoprt_for_sfodata",
+      "title": "list_PerGlobalInfoPRT_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoPRT collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoPRT",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoprt_for_sfodata",
+      "title": "get_PerGlobalInfoPRT_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoPRT collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoPRT",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoprt_for_sfodata",
+      "title": "count_PerGlobalInfoPRT_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoPRT collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoPRT",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfodnk_for_sfodata",
+      "title": "list_PerGlobalInfoDNK_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoDNK collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDNK",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfodnk_for_sfodata",
+      "title": "get_PerGlobalInfoDNK_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoDNK collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDNK",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfodnk_for_sfodata",
+      "title": "count_PerGlobalInfoDNK_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoDNK collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoDNK",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoche_for_sfodata",
+      "title": "list_PerGlobalInfoCHE_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoCHE collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHE",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoche_for_sfodata",
+      "title": "get_PerGlobalInfoCHE_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoCHE collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHE",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoche_for_sfodata",
+      "title": "count_PerGlobalInfoCHE_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoCHE collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoCHE",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfozaf_for_sfodata",
+      "title": "list_PerGlobalInfoZAF_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoZAF collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoZAF",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfozaf_for_sfodata",
+      "title": "get_PerGlobalInfoZAF_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoZAF collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoZAF",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfozaf_for_sfodata",
+      "title": "count_PerGlobalInfoZAF_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoZAF collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoZAF",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoqat_for_sfodata",
+      "title": "list_PerGlobalInfoQAT_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoQAT collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoQAT",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoqat_for_sfodata",
+      "title": "get_PerGlobalInfoQAT_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoQAT collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoQAT",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoqat_for_sfodata",
+      "title": "count_PerGlobalInfoQAT_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoQAT collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoQAT",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfosau_for_sfodata",
+      "title": "list_PerGlobalInfoSAU_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoSAU collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoSAU",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfosau_for_sfodata",
+      "title": "get_PerGlobalInfoSAU_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoSAU collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoSAU",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfosau_for_sfodata",
+      "title": "count_PerGlobalInfoSAU_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoSAU collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoSAU",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfonld_for_sfodata",
+      "title": "list_PerGlobalInfoNLD_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoNLD collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoNLD",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfonld_for_sfodata",
+      "title": "get_PerGlobalInfoNLD_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoNLD collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoNLD",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfonld_for_sfodata",
+      "title": "count_PerGlobalInfoNLD_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoNLD collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoNLD",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoare_for_sfodata",
+      "title": "list_PerGlobalInfoARE_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoARE collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoARE",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoare_for_sfodata",
+      "title": "get_PerGlobalInfoARE_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoARE collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoARE",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoare_for_sfodata",
+      "title": "count_PerGlobalInfoARE_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoARE collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoARE",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "list_perglobalinfoita_for_sfodata",
+      "title": "list_PerGlobalInfoITA_for_sfodata",
+      "description": "Retrieve a list of entities from the PerGlobalInfoITA collection in the sfodata service. Supports OData query options for filtering, sorting, ranking ($top), skipping ($skip), expanding related entities, counting, selecting specific properties. Only use attributes in the query options that are specified in the metadata. If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoITA",
+          "crudOperation": "read",
+          "parameters": [
+            {
+              "name": "filter"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "orderby"
+            },
+            {
+              "name": "top"
+            },
+            {
+              "name": "skip"
+            },
+            {
+              "name": "expand"
+            },
+            {
+              "name": "inlinecount"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "get_perglobalinfoita_for_sfodata",
+      "title": "get_PerGlobalInfoITA_for_sfodata",
+      "description": "Retrieve a single entity by its key from the PerGlobalInfoITA collection in the sfodata service. Provide the key property value(s) to identify the specific entity to retrieve. Supports OData query options for selecting specific properties ($select), expanding related entities ($expand). If the structure of the entity is not known, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoITA",
+          "crudOperation": "readByKey",
+          "parameters": [
+            {
+              "name": "country",
+              "newParameterName": "country"
+            },
+            {
+              "name": "personIdExternal",
+              "newParameterName": "personidexternal"
+            },
+            {
+              "name": "startDate",
+              "newParameterName": "startdate"
+            },
+            {
+              "name": "select"
+            },
+            {
+              "name": "expand"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "etag"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    },
+    {
+      "name": "count_perglobalinfoita_for_sfodata",
+      "title": "count_PerGlobalInfoITA_for_sfodata",
+      "description": "Get the total count of entities in the PerGlobalInfoITA collection in the sfodata service. Supports OData $filter to count only entities matching specific criteria. Use this when you need to determine the total number of entities without retrieving the actual data. If you need to understand the available filter properties, call get_metadata_sfodata tool first to get the metadata.",
+      "odataType": {
+        "entitySet": {
+          "name": "PerGlobalInfoITA",
+          "crudOperation": "count",
+          "parameters": [
+            {
+              "name": "filter"
+            }
+          ]
+        },
+        "responseHeaders": [
+          {
+            "name": "age"
+          },
+          {
+            "name": "cache-control"
+          },
+          {
+            "name": "expires"
+          },
+          {
+            "name": "last-modified"
+          },
+          {
+            "name": "x-request-id"
+          },
+          {
+            "name": "x-correlation-id"
+          },
+          {
+            "name": "content-type"
+          },
+          {
+            "name": "content-encoding"
+          },
+          {
+            "name": "content-language"
+          },
+          {
+            "name": "content-length"
+          },
+          {
+            "name": "dataserviceversion"
+          },
+          {
+            "name": "sap-message"
+          }
+        ]
+      }
+    }
+  ]
+}
